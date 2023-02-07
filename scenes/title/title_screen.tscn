@@ -1,0 +1,478 @@
+[gd_scene load_steps=21 format=3 uid="uid://c4um1ao8ghqp0"]
+
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="1_1nuq7"]
+[ext_resource type="Script" path="res://scenes/title/title_screen.gd" id="1_myo3s"]
+[ext_resource type="Texture2D" uid="uid://cwiuivrap35pm" path="res://scenes/player/player.png" id="1_t0uhr"]
+[ext_resource type="AudioStream" uid="uid://cu807cdhamg4r" path="res://scenes/!global/audio/click.wav" id="5_h4s0f"]
+[ext_resource type="AudioStream" uid="uid://dw22qu2xsx1ai" path="res://scenes/!global/audio/ding.wav" id="5_onrhe"]
+[ext_resource type="AudioStream" uid="uid://c7vhw3xo0tlka" path="res://scenes/!global/audio/duh-na-na-duck-knight.wav" id="5_pgb5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jiyc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a750o"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_th5bm"]
+font = ExtResource("1_1nuq7")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nccyj"]
+bg_color = Color(0.278431, 0.878431, 0.266667, 1)
+border_width_bottom = 32
+border_color = Color(0.235294, 0.52549, 0.227451, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqg3m"]
+bg_color = Color(0.235294, 0.52549, 0.227451, 1)
+border_width_top = 32
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq0f1"]
+bg_color = Color(0.878431, 0.286275, 0.266667, 1)
+border_width_bottom = 32
+border_color = Color(0.596078, 0.176471, 0.164706, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfcy6"]
+bg_color = Color(0.596078, 0.176471, 0.164706, 1)
+border_width_top = 32
+border_color = Color(0.745098, 0.745098, 0.745098, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj2c1"]
+draw_center = false
+
+[sub_resource type="Animation" id="Animation_j72dt"]
+resource_name = "New Game"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(203, -0.25, 0, 0.3, -6.82115, -156, -0.6, 3.01207, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_ng6eh"]
+resource_name = "Open"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.3, 0.190896, 1, -0.4, -0.253259, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-400, -0.25, 0, 1, 131.328, 20, -0.5, -5.27962, 0.25, 0),
+"times": PackedFloat32Array(0, 1.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.6, 1.25055, 1, -0.4, -0.0392778, 0.25, 0),
+"times": PackedFloat32Array(1.7, 3)
+}
+
+[sub_resource type="Animation" id="Animation_llrld"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-400, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(203, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [340.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1080, 157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6foap"]
+_data = {
+"New Game": SubResource("Animation_j72dt"),
+"Open": SubResource("Animation_ng6eh"),
+"RESET": SubResource("Animation_llrld")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8obq6"]
+bg_color = Color(0.776471, 0.776471, 0.776471, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noqgo"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myo3s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 200)
+texture = ExtResource("1_t0uhr")
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 203.0
+offset_bottom = 360.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("1_1nuq7")
+theme_override_font_sizes/normal_font_size = 156
+bbcode_enabled = true
+text = "[center][tornado freq=3 radius=5]duck  knight"
+meta_underlined = false
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -66.0
+offset_right = 234.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContiueButton" type="Button" parent="Buttons"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6jiyc")
+text = "Continue"
+flat = true
+
+[node name="NewGameButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6jiyc")
+text = "New Game"
+flat = true
+
+[node name="AboutButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6jiyc")
+text = "About"
+flat = true
+
+[node name="Confirm" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -207.0
+offset_right = -40.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a750o")
+
+[node name="ColorRect" type="ColorRect" parent="Confirm"]
+layout_mode = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -126.0
+offset_right = 74.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Confirm"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = -40.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Confirm/VBoxContainer"]
+layout_mode = 2
+text = "Overwrite save file?"
+label_settings = SubResource("LabelSettings_th5bm")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Confirm/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="Confirm" type="Button" parent="Confirm/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.54902)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_nccyj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nccyj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pqg3m")
+text = "Yes"
+
+[node name="DenyButton" type="Button" parent="Confirm/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.54902)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_kq0f1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kq0f1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gfcy6")
+text = "NO"
+
+[node name="NameInput" type="LineEdit" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 466.0
+offset_bottom = 566.0
+grow_horizontal = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.580392, 0.580392, 0.580392, 1)
+theme_override_colors/caret_color = Color(0.901961, 0.901961, 0.901961, 0)
+theme_override_colors/selection_color = Color(0.188235, 0.439216, 0.894118, 1)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_hj2c1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hj2c1")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_hj2c1")
+placeholder_text = "Name the duck"
+alignment = 1
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_h4s0f")
+
+[node name="DuckKnight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_pgb5d")
+
+[node name="Ding" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_onrhe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6foap")
+}
+
+[node name="AboutPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8obq6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AboutPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 160.0
+offset_right = -43.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_1nuq7")
+theme_override_fonts/bold_font = ExtResource("1_1nuq7")
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 128
+bbcode_enabled = true
+text = "[b]This game...[/b]
+This game was made in [wave freq=3 amp=50]1 month[/wave] for the [wave freq=3 amp=50]1 game a month challenge[/wave]. 
+My next game will come out in the end of february.
+
+[b]How to Play:[/b]
+Click the bundle icon to view your inventory.
+Once you have equipped items, click the duck to send them on a quest. After sending them on a quest, you must wait for them to come back.
+Your duck will get bored and leave 72 hours after you start. 
+You get points for the different items you have, and for monsters you have killed.
+Your duck will collect new items while on quests."
+
+[node name="ExitButton" type="Button" parent="AboutPanel"]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_colors/font_focus_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("1_1nuq7")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/focus = SubResource("StyleBoxEmpty_noqgo")
+text = "x"
+flat = true
+
+[connection signal="gui_input" from="Title" to="." method="_on_title_gui_input"]
+[connection signal="pressed" from="Buttons/ContiueButton" to="." method="_on_contiue_button_pressed"]
+[connection signal="pressed" from="Buttons/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Buttons/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="AboutPanel/ExitButton" to="." method="_on_about_exit_button_pressed"]

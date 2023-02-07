@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://oiejuooqkjyg"]
+
+[ext_resource type="Script" path="res://scenes/inventory/inventory.gd" id="1_wiyyo"]
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="2_avpic"]
+[ext_resource type="AudioStream" uid="uid://cu807cdhamg4r" path="res://scenes/!global/audio/click.wav" id="3_y7f6x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2l50j"]
+bg_color = Color(0.776471, 0.776471, 0.776471, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpus7"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wiyyo")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2l50j")
+
+[node name="Items" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 2014.0
+offset_bottom = -100.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_colors/font_focus_color = Color(0.701961, 0.117647, 0.117647, 1)
+theme_override_fonts/font = ExtResource("2_avpic")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tpus7")
+text = "x"
+flat = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y7f6x")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

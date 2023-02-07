@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=10 format=3 uid="uid://cssmnbgwsghip"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_type.gd" id="1_fqwpl"]
+[ext_resource type="Resource" uid="uid://bdxrnv2841u44" path="res://scenes/inventory/item/traits/quick.tres" id="1_pp7m5"]
+[ext_resource type="Resource" uid="uid://dl6vi1g3ceqgh" path="res://scenes/inventory/item/traits/protection.tres" id="2_6rqu1"]
+[ext_resource type="Resource" uid="uid://brbh4xkb8fe3u" path="res://scenes/inventory/item/traits/flaming.tres" id="3_8e8qe"]
+[ext_resource type="Texture2D" uid="uid://bjeefa6p2sb2w" path="res://scenes/inventory/item/item_types/sprites/boots/boots-1.png" id="3_vg8ja"]
+[ext_resource type="Resource" uid="uid://dm4pkc3x3htpx" path="res://scenes/inventory/item/traits/dodging.tres" id="4_ck2rs"]
+[ext_resource type="Texture2D" uid="uid://cqb8tl44xitbh" path="res://scenes/inventory/item/item_types/sprites/boots/boots-2.png" id="4_cw1ve"]
+[ext_resource type="Texture2D" uid="uid://byb5vi380vdcn" path="res://scenes/inventory/item/item_types/sprites/boots/boots-3.png" id="5_tfgi3"]
+[ext_resource type="Texture2D" uid="uid://o2nhh4ihhsac" path="res://scenes/inventory/item/item_types/sprites/boots/boots-4.png" id="6_oj0if"]
+
+[resource]
+script = ExtResource("1_fqwpl")
+names = ["boots", "boots", "shoes", "shoes", "sandals", "soles", "feet coverings"]
+possible_traits = [ExtResource("1_pp7m5"), ExtResource("2_6rqu1"), ExtResource("3_8e8qe"), ExtResource("4_ck2rs")]
+textures = [ExtResource("3_vg8ja"), ExtResource("4_cw1ve"), ExtResource("5_tfgi3"), ExtResource("6_oj0if")]

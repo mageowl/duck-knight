@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="duck knight"
+run/main_scene="res://scenes/title/title_screen.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.png"
+config/quit_on_go_back=false
+
+[autoload]
+
+NotificationManager="*res://scenes/!global/notification_manager.gd"
+SaveGame="*res://scenes/!global/save_game.gd"
+QuestManager="*res://scenes/quest/quest_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=2160
+window/handheld/orientation=1
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.901961, 0.901961, 0.901961, 1)
+textures/canvas_textures/default_texture_filter=0

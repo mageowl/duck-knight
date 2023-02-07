@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemTrait" load_steps=4 format=3 uid="uid://bdxrnv2841u44"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_8fqwj"]
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait.gd" id="1_yskur"]
+
+[sub_resource type="Resource" id="Resource_lv2b5"]
+script = ExtResource("1_8fqwj")
+effect_type = 2
+statistic = 1
+amount = -2.0
+
+[resource]
+script = ExtResource("1_yskur")
+display_name = "Quick"
+curse = false
+effects = [SubResource("Resource_lv2b5")]
+adjectives = ["speedy", "fast", "quick", "winged", "quick-walking"]
+post_adjectives = ["of speed", "of quickness", "of quick-walking", "of winged speed", "of dragon flight"]

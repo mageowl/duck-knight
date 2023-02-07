@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://cvclm2d34r0v1"]
+
+[ext_resource type="Resource" uid="uid://brbh4xkb8fe3u" path="res://scenes/inventory/item/traits/flaming.tres" id="1_6xahp"]
+[ext_resource type="Script" path="res://scenes/inventory/item/item_type.gd" id="1_oslou"]
+[ext_resource type="Resource" uid="uid://co3ymfbnr210v" path="res://scenes/inventory/item/traits/venomous.tres" id="2_vw6at"]
+[ext_resource type="Texture2D" uid="uid://bc657s5u6b3r0" path="res://scenes/inventory/item/item_types/sprites/sword/sword-1.png" id="3_0k6h1"]
+[ext_resource type="Resource" uid="uid://bo0on2kbge0hi" path="res://scenes/inventory/item/traits/sharp.tres" id="3_tehhm"]
+[ext_resource type="Texture2D" uid="uid://fsjm7d702iex" path="res://scenes/inventory/item/item_types/sprites/sword/sword-2.png" id="4_441qq"]
+[ext_resource type="Texture2D" uid="uid://40032nkeu5ax" path="res://scenes/inventory/item/item_types/sprites/sword/sword-3.png" id="5_lmssd"]
+[ext_resource type="Texture2D" uid="uid://ctc4l0inqh5bp" path="res://scenes/inventory/item/item_types/sprites/sword/sword-4.png" id="6_n8p4x"]
+[ext_resource type="Texture2D" uid="uid://c8hfp1vlg8dk7" path="res://scenes/inventory/item/item_types/sprites/sword/sword-5.png" id="7_wqpcg"]
+[ext_resource type="Texture2D" uid="uid://rfwnh4sh8shq" path="res://scenes/inventory/item/item_types/sprites/sword/sword-6.png" id="8_nc0qj"]
+[ext_resource type="Texture2D" uid="uid://ug32m04i2hbm" path="res://scenes/inventory/item/item_types/sprites/sword/sword-7.png" id="9_o1xxx"]
+
+[resource]
+script = ExtResource("1_oslou")
+names = ["sword", "longsword", "shortsword", "iron stick", "saber", "rod", "rapier", "blade", "dagger", "cutlass", "scimitar"]
+possible_traits = [ExtResource("1_6xahp"), ExtResource("2_vw6at"), ExtResource("3_tehhm")]
+textures = [ExtResource("3_0k6h1"), ExtResource("4_441qq"), ExtResource("5_lmssd"), ExtResource("6_n8p4x"), ExtResource("7_wqpcg"), ExtResource("8_nc0qj"), ExtResource("9_o1xxx")]

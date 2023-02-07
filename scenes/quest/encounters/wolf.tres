@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=9 format=3 uid="uid://cpb6euutr476s"]
+
+[ext_resource type="Script" path="res://scenes/quest/encounter.gd" id="1_2s3pj"]
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_w3glk"]
+[ext_resource type="Resource" uid="uid://bo0on2kbge0hi" path="res://scenes/inventory/item/traits/sharp.tres" id="1_x6gdc"]
+[ext_resource type="Resource" uid="uid://brbh4xkb8fe3u" path="res://scenes/inventory/item/traits/flaming.tres" id="2_kdjkk"]
+[ext_resource type="Resource" uid="uid://co3ymfbnr210v" path="res://scenes/inventory/item/traits/venomous.tres" id="3_xx2ti"]
+[ext_resource type="Texture2D" uid="uid://bj3xcxqv2jvo0" path="res://scenes/quest/encounters/sprites/wolf.png" id="4_mki55"]
+[ext_resource type="Resource" uid="uid://dm4pkc3x3htpx" path="res://scenes/inventory/item/traits/dodging.tres" id="5_lu5rf"]
+
+[sub_resource type="Resource" id="Resource_4xtom"]
+script = ExtResource("1_w3glk")
+effect_type = 0
+damage = "2"
+
+[resource]
+script = ExtResource("1_2s3pj")
+display_name = "wolf"
+health = "5-7"
+gold = 50
+texture = ExtResource("4_mki55")
+possible_traits = [ExtResource("1_x6gdc"), ExtResource("2_kdjkk"), ExtResource("3_xx2ti"), ExtResource("5_lu5rf")]
+bonus_effects = [SubResource("Resource_4xtom")]

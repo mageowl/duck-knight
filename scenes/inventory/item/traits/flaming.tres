@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemTrait" load_steps=5 format=3 uid="uid://brbh4xkb8fe3u"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait.gd" id="1_012n2"]
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_peosk"]
+
+[sub_resource type="Resource" id="Resource_ggmqk"]
+script = ExtResource("1_peosk")
+effect_type = 1
+status_effect = 0
+duration = 2
+chance = 0.3
+
+[sub_resource type="Resource" id="Resource_f2203"]
+script = ExtResource("1_peosk")
+effect_type = 0
+damage = "1"
+
+[resource]
+script = ExtResource("1_012n2")
+display_name = "Flaming"
+curse = false
+effects = [SubResource("Resource_ggmqk"), SubResource("Resource_f2203")]
+adjectives = ["hot", "red", "flaming", "firey", "burning", "scorching"]
+post_adjectives = ["of dragon-flame", "of fire", "of heat", "of scorching", "of flames", "of blasting"]

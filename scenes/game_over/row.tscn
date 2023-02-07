@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkxbg0w6gpec5"]
+
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="1_yy32b"]
+[ext_resource type="Script" path="res://scenes/game_over/row.gd" id="2_jbt0t"]
+[ext_resource type="Texture2D" uid="uid://thon7y52ei0v" path="res://scenes/home/coin.png" id="2_ttqe6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_686bs"]
+font = ExtResource("1_yy32b")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[node name="Row" type="Label"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 103.0
+grow_horizontal = 2
+text = "Monsters"
+label_settings = SubResource("LabelSettings_686bs")
+script = ExtResource("2_jbt0t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_686bs")
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Label"]
+custom_minimum_size = Vector2(144, 108)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -2.5
+offset_right = -10.0
+offset_bottom = 2.5
+grow_vertical = 2
+texture = ExtResource("2_ttqe6")
+stretch_mode = 5

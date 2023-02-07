@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfywyyq68gslr"]
+
+[ext_resource type="Texture2D" uid="uid://cwiuivrap35pm" path="res://scenes/player/player.png" id="1_ysxp0"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="2_og13v"]
+
+[node name="Player" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 400)
+offset_right = 400.0
+offset_bottom = 400.0
+texture = ExtResource("1_ysxp0")
+stretch_mode = 5
+script = ExtResource("2_og13v")
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(125, 200)
+scale = Vector2(25, 25)
+
+[node name="Boots" type="Sprite2D" parent="."]
+position = Vector2(175, 300)
+scale = Vector2(25, 25)
+
+[node name="Charm" type="Sprite2D" parent="."]
+position = Vector2(300, 300)
+scale = Vector2(25, 25)

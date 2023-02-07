@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=3 uid="uid://wqkk41sgqdav"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_card.gd" id="1_fi5nt"]
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="1_fk6yl"]
+[ext_resource type="Texture2D" uid="uid://gh1ji7sg54xx" path="res://scenes/!global/circle.png" id="2_wucem"]
+[ext_resource type="Texture2D" uid="uid://eoahwd0rj3hp" path="res://scenes/inventory/item/item_types/sprites/error.png" id="3_2g571"]
+[ext_resource type="AudioStream" uid="uid://dw22qu2xsx1ai" path="res://scenes/!global/audio/ding.wav" id="5_2ka8y"]
+[ext_resource type="AudioStream" uid="uid://cu807cdhamg4r" path="res://scenes/!global/audio/click.wav" id="6_ugxxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sv1b1"]
+bg_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm5e0"]
+bg_color = Color(0.278431, 0.878431, 0.266667, 1)
+border_width_bottom = 30
+border_color = Color(0.235294, 0.52549, 0.227451, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbtfv"]
+bg_color = Color(0.278431, 0.878431, 0.266667, 1)
+border_width_bottom = 30
+border_color = Color(0.235294, 0.52549, 0.227451, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjgdg"]
+bg_color = Color(0.235294, 0.52549, 0.227451, 1)
+border_width_top = 30
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aios5"]
+bg_color = Color(0.235294, 0.52549, 0.227451, 1)
+border_width_top = 30
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6vyi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp0mw"]
+bg_color = Color(0.788235, 0.788235, 0.788235, 1)
+border_width_bottom = 30
+border_color = Color(0.505882, 0.505882, 0.505882, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qh8v"]
+bg_color = Color(0.505882, 0.505882, 0.505882, 1)
+border_width_top = 30
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[node name="Item" type="Panel"]
+custom_minimum_size = Vector2(980, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sv1b1")
+script = ExtResource("1_fi5nt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 310.0
+grow_horizontal = 2
+texture = ExtResource("2_wucem")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 65.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 48
+
+[node name="Icon" type="TextureRect" parent="Container"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("3_2g571")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fk6yl")
+theme_override_font_sizes/font_size = 100
+text = "Item not found"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TraitList" type="RichTextLabel" parent="Container"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_fonts/normal_font = ExtResource("1_fk6yl")
+theme_override_fonts/italics_font = ExtResource("1_fk6yl")
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+bbcode_enabled = true
+text = "[color=47e044]Level 2[/color]
+Flaming
+ect.
+[color=#777]
+___ damage per turn
+Inflicts ___"
+fit_content = true
+
+[node name="EquipButton" type="Button" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -265.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.392157)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fk6yl")
+theme_override_font_sizes/font_size = 164
+theme_override_styles/normal = SubResource("StyleBoxFlat_tm5e0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bbtfv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wjgdg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_aios5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6vyi")
+disabled = true
+text = "Equip"
+
+[node name="UnequipButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -265.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.392157)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fk6yl")
+theme_override_font_sizes/font_size = 164
+theme_override_styles/normal = SubResource("StyleBoxFlat_vp0mw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vp0mw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3qh8v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3qh8v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l6vyi")
+disabled = true
+text = "Unequip"
+
+[node name="Ding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2ka8y")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ugxxo")
+
+[connection signal="pressed" from="EquipButton" to="." method="_on_equip_button_pressed"]
+[connection signal="pressed" from="UnequipButton" to="." method="_on_unequip_button_pressed"]

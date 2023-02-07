@@ -1,0 +1,216 @@
+[gd_scene load_steps=19 format=3 uid="uid://d2keasujba4fr"]
+
+[ext_resource type="Script" path="res://scenes/home/home.gd" id="1_q5c47"]
+[ext_resource type="PackedScene" uid="uid://cfywyyq68gslr" path="res://scenes/player/player.tscn" id="2_q6ocr"]
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="2_xccju"]
+[ext_resource type="Texture2D" uid="uid://c58xf4nr4v0dt" path="res://scenes/home/backpack.png" id="3_e1mkh"]
+[ext_resource type="Texture2D" uid="uid://vre6q1qv1nmf" path="res://scenes/home/backpack_press.png" id="4_ma5uo"]
+[ext_resource type="Texture2D" uid="uid://gh1ji7sg54xx" path="res://scenes/!global/circle.png" id="5_dxkt0"]
+[ext_resource type="PackedScene" uid="uid://oiejuooqkjyg" path="res://scenes/inventory/inventory.tscn" id="6_ije23"]
+[ext_resource type="Texture2D" uid="uid://dqj1uvt15n4ds" path="res://scenes/home/clock.png" id="7_cickb"]
+[ext_resource type="AudioStream" uid="uid://cu807cdhamg4r" path="res://scenes/!global/audio/click.wav" id="7_fwv8r"]
+[ext_resource type="AudioStream" uid="uid://b11ckh6amsdjf" path="res://scenes/!global/audio/woosh.wav" id="8_3p5ng"]
+[ext_resource type="AudioStream" uid="uid://c0t40ldk5rer0" path="res://scenes/!global/audio/error.wav" id="9_8lh45"]
+[ext_resource type="AudioStream" uid="uid://pgiybfx8h7o5" path="res://scenes/!global/audio/footstep.wav" id="10_lhp2d"]
+[ext_resource type="Texture2D" uid="uid://thon7y52ei0v" path="res://scenes/home/coin.png" id="12_bwyne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qjpbt"]
+font = ExtResource("2_xccju")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0jk1y"]
+font = ExtResource("2_xccju")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_53o2n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_60y00"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0698132, -0.0698132]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bogob"]
+_data = {
+"RESET": SubResource("Animation_53o2n"),
+"Walk": SubResource("Animation_60y00")
+}
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q5c47")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 74.0
+offset_right = 1.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.137255)
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -354.0
+offset_bottom = -222.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Goldor the best"
+label_settings = SubResource("LabelSettings_qjpbt")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("2_q6ocr")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -275.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+
+[node name="InventoryBtn" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -275.0
+offset_right = 285.0
+offset_bottom = -25.0
+grow_vertical = 0
+texture_normal = ExtResource("3_e1mkh")
+texture_pressed = ExtResource("4_ma5uo")
+stretch_mode = 4
+
+[node name="Circle" type="TextureRect" parent="InventoryBtn"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 280.0
+offset_bottom = 264.0
+texture = ExtResource("5_dxkt0")
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -184.0
+offset_top = 32.0
+offset_right = -40.0
+offset_bottom = 164.0
+grow_horizontal = 0
+text = "72:00"
+label_settings = SubResource("LabelSettings_0jk1y")
+
+[node name="TextureRect" type="TextureRect" parent="Timer"]
+custom_minimum_size = Vector2(144, 108)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = 12.0
+offset_right = -11.0
+offset_bottom = -12.0
+grow_vertical = 2
+texture = ExtResource("7_cickb")
+stretch_mode = 5
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 24.0
+offset_right = 337.0
+offset_bottom = 156.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_0jk1y")
+
+[node name="TextureRect" type="TextureRect" parent="Coins"]
+custom_minimum_size = Vector2(144, 108)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = 12.0
+offset_right = -11.0
+offset_bottom = -12.0
+grow_vertical = 2
+texture = ExtResource("12_bwyne")
+
+[node name="Inventory" parent="." instance=ExtResource("6_ije23")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_fwv8r")
+
+[node name="Woosh" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_3p5ng")
+
+[node name="Error" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_8lh45")
+
+[node name="Footstep" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_lhp2d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bogob")
+}
+
+[connection signal="gui_input" from="Player" to="." method="_on_player_gui_input"]
+[connection signal="pressed" from="InventoryBtn" to="." method="_on_inventory_btn_pressed"]

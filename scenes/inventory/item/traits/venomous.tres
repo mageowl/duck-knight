@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemTrait" load_steps=5 format=3 uid="uid://co3ymfbnr210v"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait.gd" id="1_n0c3f"]
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_oseqd"]
+
+[sub_resource type="Resource" id="Resource_i3vxo"]
+script = ExtResource("1_oseqd")
+effect_type = 1
+status_effect = 2
+duration = 3
+chance = 0.5
+
+[sub_resource type="Resource" id="Resource_c61l7"]
+script = ExtResource("1_oseqd")
+effect_type = 2
+statistic = 3
+amount = 1.0
+
+[resource]
+script = ExtResource("1_n0c3f")
+display_name = "Venomous"
+curse = false
+effects = [SubResource("Resource_i3vxo"), SubResource("Resource_c61l7")]
+adjectives = ["poisoned", "venomous", "toxic", "sickened"]
+post_adjectives = ["of poison", "of venom", "of toxin", "of poisoning", "of sickness"]

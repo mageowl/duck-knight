@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=8 format=3 uid="uid://bc3o1ey5878d7"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_2vo3w"]
+[ext_resource type="Script" path="res://scenes/quest/encounter.gd" id="1_tuoqh"]
+[ext_resource type="Resource" uid="uid://dm4pkc3x3htpx" path="res://scenes/inventory/item/traits/dodging.tres" id="2_i8xnp"]
+[ext_resource type="Resource" uid="uid://co3ymfbnr210v" path="res://scenes/inventory/item/traits/venomous.tres" id="3_gqat6"]
+[ext_resource type="Resource" uid="uid://dl6vi1g3ceqgh" path="res://scenes/inventory/item/traits/protection.tres" id="4_v6ynf"]
+[ext_resource type="Texture2D" uid="uid://d0vklmkyf22go" path="res://scenes/quest/encounters/sprites/whomped_willow.png" id="6_68dsl"]
+
+[sub_resource type="Resource" id="Resource_cd055"]
+script = ExtResource("1_2vo3w")
+effect_type = 0
+damage = "1"
+
+[resource]
+script = ExtResource("1_tuoqh")
+display_name = "willow"
+health = "6-10"
+gold = 60
+texture = ExtResource("6_68dsl")
+possible_traits = [ExtResource("2_i8xnp"), ExtResource("3_gqat6"), ExtResource("4_v6ynf")]
+bonus_effects = [SubResource("Resource_cd055")]

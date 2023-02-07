@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://1f3ff5mwgm5"]
+
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="1_u2ih0"]
+[ext_resource type="Script" path="res://scenes/home/not_available.gd" id="2_m2ejb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xq5il"]
+font = ExtResource("1_u2ih0")
+font_size = 128
+font_color = Color(0.560784, 0.560784, 0.560784, 1)
+
+[node name="Label" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.5
+offset_top = -198.0
+offset_right = 537.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "your duck is not available right now."
+label_settings = SubResource("LabelSettings_xq5il")
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_m2ejb")

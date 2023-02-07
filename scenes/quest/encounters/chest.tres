@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Encounter" load_steps=5 format=3 uid="uid://dblpaun7qr841"]
+
+[ext_resource type="Script" path="res://scenes/inventory/item/item_trait_effect.gd" id="1_qpltt"]
+[ext_resource type="Script" path="res://scenes/quest/encounter.gd" id="1_wb4wl"]
+[ext_resource type="Texture2D" uid="uid://ctors01ch6mxg" path="res://scenes/quest/encounters/sprites/chest.png" id="2_6jlrr"]
+
+[sub_resource type="Resource" id="Resource_53vik"]
+script = ExtResource("1_qpltt")
+effect_type = 3
+
+[resource]
+script = ExtResource("1_wb4wl")
+display_name = "chest"
+health = "*"
+gold = 0
+texture = ExtResource("2_6jlrr")
+possible_traits = null
+bonus_effects = [SubResource("Resource_53vik")]

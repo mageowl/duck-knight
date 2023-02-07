@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://c87ek1x00848u"]
+
+[ext_resource type="FontFile" uid="uid://dy5p4jdva5nj2" path="res://scenes/!global/LilMrkr-Tight-Regular.otf" id="1_agxon"]
+[ext_resource type="Script" path="res://scenes/game_over/game_over.gd" id="1_do7op"]
+[ext_resource type="PackedScene" uid="uid://cfywyyq68gslr" path="res://scenes/player/player.tscn" id="2_xdx47"]
+[ext_resource type="Texture2D" uid="uid://thon7y52ei0v" path="res://scenes/home/coin.png" id="3_1h5f0"]
+[ext_resource type="PackedScene" uid="uid://dkxbg0w6gpec5" path="res://scenes/game_over/row.tscn" id="4_4e0us"]
+[ext_resource type="AudioStream" uid="uid://cu807cdhamg4r" path="res://scenes/!global/audio/click.wav" id="6_xku26"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbuka"]
+font = ExtResource("1_agxon")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+outline_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_cryi3"]
+font = ExtResource("1_agxon")
+font_size = 100
+font_color = Color(0.878431, 0.286275, 0.266667, 1)
+outline_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_yeui2"]
+font = ExtResource("1_agxon")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yk2q"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_do7op")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 137.0
+offset_right = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="Container"]
+layout_mode = 2
+text = "Gondor the Epic"
+label_settings = SubResource("LabelSettings_tbuka")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Container/Name"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -69.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Game over"
+label_settings = SubResource("LabelSettings_cryi3")
+horizontal_alignment = 1
+
+[node name="Player" parent="Container" instance=ExtResource("2_xdx47")]
+layout_mode = 2
+
+[node name="CoinLabel" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Container/CoinLabel"]
+custom_minimum_size = Vector2(144, 108)
+layout_mode = 2
+texture = ExtResource("3_1h5f0")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="Container/CoinLabel"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_yeui2")
+horizontal_alignment = 1
+
+[node name="MonsterRow" parent="Container" instance=ExtResource("4_4e0us")]
+layout_mode = 2
+
+[node name="OKButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -249.0
+offset_top = -188.0
+offset_right = 249.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_agxon")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5yk2q")
+text = "OK"
+flat = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xku26")
+
+[connection signal="pressed" from="OKButton" to="Container" method="_on_button_pressed"]
